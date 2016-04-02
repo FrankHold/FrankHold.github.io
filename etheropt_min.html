@@ -9,13 +9,13 @@
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="https://getbootstrap.com/assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
     <link href="http://etheropt.github.io/style.css" rel="stylesheet">
-    <title>Etheropt (min)</title>
+    <title>minEtheropt</title>
   </head>
 
   <body>
   
     <div id="header">
-        <h3 class="panel-title">Hello DApp World</h3>
+        <h1 class="panel-title">Hello new DApp World</h1>
     </div>
 
     <nav class="navbar navbar-default">
@@ -173,7 +173,26 @@
     <script src="http://etheropt.github.io/ejs_production.js" type="text/javascript"></script>
     <script src="http://etheropt.github.io/config.js" type="text/javascript"></script>
     <script src="http://etheropt.github.io/bundle.js" type="text/javascript"></script>
-    <script src="http://etheropt.github.io/script.js" type="text/javascript"></script>
+    
+    <-- <script src="http://etheropt.github.io/script.js" type="text/javascript"></script> -->
+    <script
+        var config = {};
+        config.home_url = 'http://etheropt.github.io';
+        // config.home_url = 'http://localhost:8080';
+        config.contract_market = 'etheropt.sol';
+        config.contract_market_addr = '0xa3d4d7df3988d48c48728787cb5910a8a4cc4d26';
+        config.domain = undefined;
+        config.port = 8081;
+        config.eth_testnet = false;
+        config.eth_provider = 'http://localhost:8545';
+        config.eth_addr = '0x0000000000000000000000000000000000000000';
+        config.eth_addr_pk = '';
+        try {
+          global.config = config;
+          module.exports = config;
+        } catch (err) {}
+    ></script>
+    
   </body>
 </html>
 
