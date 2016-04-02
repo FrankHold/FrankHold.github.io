@@ -75,26 +75,6 @@
       <div id="connection"></div>
     </div>
 
-<!--  addresses.ejs -->
-<ul class="nav navbar-nav navbar-right">
-  <li class="dropdown">
-    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= addresses[selectedAddr].addr.substring(0,12) %>... <span class="badge"><%= bundle.utility.weiToEth(addresses[selectedAddr].balance) %> eth</span> <span class="caret"></span></a>
-    <ul class="dropdown-menu">
-      <% addresses.forEach(function(address, i, array) { %>
-        <li><a href="#" onclick="bundle.Main.selectAddress(<%= i%>);"><%= address.addr %> <span class="badge"><%= bundle.utility.weiToEth(address.balance) %> eth</span></a></li>
-      <% }); %>
-      <li>
-        <a onclick="bundle.Main.shapeshift_click(this, event);" href="https://shapeshift.io/shifty.html?destination=<%= addresses[selectedAddr].addr%>&amp;output=ETH&amp;amount=">Deposit with ShapeShift.io</a>
-      </li>
-      <li><a href="#" data-toggle="modal" data-target="#address_modal">Add existing account</a></li>
-      <li><a href="#" onclick="bundle.Main.createAddress()">Create new account</a></li>
-      <li><a href="#" onclick="bundle.Main.showPrivateKey()">Export private key</a></li>
-      <li><a href="#" onclick="bundle.Main.deleteAddress()">Forget current account</a></li>
-      <li><a href="#" onclick="bundle.Main.logout()">Forget all accounts</a></li>
-    </ul>
-  </li>
-</ul>
-
     <!-- Address -->
     <div class="modal fade" id="address_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
       <div class="modal-dialog modal-sm" role="document">
@@ -238,5 +218,10 @@
         </div>
       </div>
     </div>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script src="http://etheropt.github.io/ejs_production.js" type="text/javascript"></script>
+    <script src="http://etheropt.github.io/config_testnet.js" type="text/javascript"></script>
+    <script src="http://etheropt.github.io/bundle.js" type="text/javascript"></script>
+    <script src="http://etheropt.github.io/script.js" type="text/javascript"></script>
   </body>
 </html>
