@@ -1,8 +1,8 @@
-var Web3 = _dereq_('web3');
-var utility = _dereq_('./utility.js');
-var request = _dereq_('request');
-var sha256 = _dereq_('js-sha256').sha256;
-var async = (typeof(window) === 'undefined') ? _dereq_('async') : _dereq_('async/dist/async.min.js');
+var Web3 = require('web3');
+var utility = require('./utility.js');
+var request = require('request');
+var sha256 = require('js-sha256').sha256;
+var async = (typeof(window) === 'undefined') ? require('async') : require('async/dist/async.min.js');
 
 function Main() {
 }
