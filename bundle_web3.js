@@ -1,8 +1,11 @@
-var Web3 = require('web3');
-var utility = require('./utility.js');
-var request = require('request');
-var sha256 = require('js-sha256').sha256;
-var async = (typeof(window) === 'undefined') ? require('async') : require('async/dist/async.min.js');
+(function(f){if(typeof exports==="object"&&typeof module!=="undefined"){module.exports=f()}else if(typeof define==="function"&&define.amd){define([],f)}else{var g;if(typeof window!=="undefined"){g=window}else if(typeof global!=="undefined"){g=global}else if(typeof self!=="undefined"){g=self}else{g=this}g.bundle = f()}})(function(){var define,module,exports;return (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(_dereq_,module,exports){
+(function (Buffer){
+
+var Web3 = _dereq_('web3');
+var utility = _dereq_('./utility.js');
+var request = _dereq_('request');
+var sha256 = _dereq_('js-sha256').sha256;
+var async = (typeof(window) === 'undefined') ? _dereq_('async') : _dereq_('async/dist/async.min.js');
 
 function Main() {
 }
@@ -383,3 +386,4 @@ utility.readFile(config.contract_market+'.compiled', function(result){
 });
 
 module.exports = {Main: Main, utility: utility};
+});
