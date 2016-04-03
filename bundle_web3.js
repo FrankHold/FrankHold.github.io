@@ -386,4 +386,5 @@ utility.readFile(config.contract_market+'.compiled', function(result){
 });
 
 module.exports = {Main: Main, utility: utility};
+}).call(this,_dereq_("buffer").Buffer)
 });
