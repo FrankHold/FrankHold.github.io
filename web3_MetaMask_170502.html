@@ -49,7 +49,7 @@ window.addEventListener('load', function() {
   
   //  var coinbase = web3.eth.coinbase;
   //var coinbase = web3.eth.accounts[0];
-  var window.coinbase = "";
+  var coinbase = "";
   web3.eth.getAccounts(function(error, result){
     console.log(result);
     document.getElementById('coinbase').innerText = result;
@@ -58,6 +58,7 @@ window.addEventListener('load', function() {
   })
 
 //window.coinbase="0x118c191228cc79cfc886086fc346d1d47e29c2b1";
+  console.log(window.coinbase);
 web3.eth.getBalance(window.coinbase, function(error, result){
         console.log(result);
         document.getElementById('balance').innerText = result.c[0].toString(10) + result.c[1].toString(10) ;
