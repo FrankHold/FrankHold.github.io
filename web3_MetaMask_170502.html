@@ -1,6 +1,6 @@
 <html>
 <head>
-  <title>hi21</title>
+  <title>hi22</title>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
   <meta http-equiv="content-language" content="en">
 
@@ -50,9 +50,12 @@ window.addEventListener('load', function() {
   
   
   //  var coinbase = web3.eth.coinbase;
-  var coinbase = web3.eth.accounts[0];
-  document.getElementById('coinbase').innerText = coinbase;
+  //var coinbase = web3.eth.accounts[0];
   
+  web3.eth.getAccounts(function(error, result){
+    document.getElementById('coinbase').innerText = result;
+  })
+
  
 //web3.eth.getBalance(coinbase, function(error, result){
 //        document.getElementById('balance').innerText = result.c[0].toString(10) + result.c[1].toString(10) ;
