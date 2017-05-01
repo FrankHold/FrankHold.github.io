@@ -7,8 +7,7 @@
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js">
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js">
   <script src="http://npage.de/assets/js/jquery-1.10.2.min.js"></script>
-<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
-   <link rel="stylesheet" href="http://jslegers.github.com/jquery-bootstrap/assets/css/jquery-bootstrap.css">
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>   <link rel="stylesheet" href="http://jslegers.github.com/jquery-bootstrap/assets/css/jquery-bootstrap.css">
 <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js">-->
 
     
@@ -54,13 +53,14 @@ window.addEventListener('load', function() {
   var coinbase;
   web3.eth.getAccounts(function(error, result){
     console.log(result);
-    coinbase = result[0];
+    window.coinbase = result[0];
     document.getElementById('coinbase_').innerText = result;
-    console.log(coinbase);
+    console.log(window.coinbase);
   })
 
 //window.coinbase="0x118c191228cc79cfc886086fc346d1d47e29c2b1";
   console.log(coinbase);
+  console.log(window.coinbase);
 web3.eth.getBalance(coinbase, function(error, result){
         console.log(result);
         document.getElementById('balance').innerText = result.c[0].toString(10) + result.c[1].toString(10) ;
