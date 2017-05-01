@@ -13,15 +13,11 @@
 
 <script type="text/javascript">
  ///First web3.eth.watch code to monitor coinbase
-
-  var coinbase;
   
 window.addEventListener('load', function() {
 
-
   // Checking if Web3 has been injected by the browser (Mist/MetaMask)
-  if (typeof web3 !== 'undefined') {    
-    // Use Mist/MetaMask's provider
+  if (typeof web3 !== 'undefined') {        // Use Mist/MetaMask's provider
     window.web3 = new Web3(web3.currentProvider);
   } else {
     console.log('No web3? You should consider trying MetaMask!')
@@ -46,58 +42,19 @@ window.addEventListener('load', function() {
     default:
       document.getElementById('Net').innerText ='This is an unknown network.';
   }
-}) 
-  
-  
-  //  var coinbase = web3.eth.coinbase;
-  //var coinbase = web3.eth.accounts[0];
-  //var coinbase = "0x0000000000000000000000000000000000000000";
-  //var coinbase;
- // web3.eth.getAccounts(function(error, result){
-    //console.log(result);
-    //coinbase = result[0];
-   // document.getElementById('coinbase_').innerText = result;
-    //console.log(coinbase);
-  //})
-
-//  web3.eth.getAccounts(function(err, accounts) { 
-//    web3.eth.getBalance(accounts[0], function(err, balance) { 
-//      console.log(web3.fromWei(balance, "ether")); 
-//    }) 
-//  })
+  }) 
     
- 		web3.eth.getAccounts(function(err, accounts){
+	web3.eth.getAccounts(function(err, accounts){
 			web3.eth.defaultAccount = accounts[0];
 
 			document.getElementById('coinbase_').innerText = accounts[0];	
 
-			
-	
 			web3.eth.getBalance(accounts[0], function(err, balance){
 				document.getElementById('balance').innerText = web3.fromWei(balance, 'ether');
-
-				
 			});
-		});
+	});
   
-//web3.eth.getBalance(
-//  web3.eth.getAccounts(function(err, accounts) {
-//        //console.log(accounts);
-//        //return accounts[0];
-//  }
-//                    , function(error, result){
-//        console.log(result);
-//        document.getElementById('balance').innerText = result.c[0].toString(10) + result.c[1].toString(10) ;
-//}))    
-  
-//window.coinbase="0x118c191228cc79cfc886086fc346d1d47e29c2b1";
-//  console.log(coinbase);
-//  console.log(window.coinbase);
-//  console.log(web3.eth.accounts[0]);
-//web3.eth.getBalance(coinbase, function(error, result){
-//        console.log(result);
-//        document.getElementById('balance').innerText = result.c[0].toString(10) + result.c[1].toString(10) ;
-//})
+
   
 web3.eth.getBlock("latest" , function(error, result){
         //console.log(result);
