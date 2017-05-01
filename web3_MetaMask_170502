@@ -1,0 +1,126 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta http-equiv="content-language" content="en"><title>hi</title>
+<meta name="robots" content="index, follow">
+<link rel="stylesheet" href="/main.css?p=MmmVqhGrGVqQrR%2FbxGtk6Q7dWjzG18ATbxpivgZkfbo%3D" type="text/css">
+<base href="http://npage.de/"><script>var localizationContent = [];</script><link rel="stylesheet" type="text/css" href="/assets/css/jquery-ui-1.11.4.custom.min.css" />
+<script src="/assets/js/jquery-1.10.2.min.js"></script>
+<script src="/assets/js/jquery.i18n.min.js"></script>
+<script src="/assets/js/setLocalizations.js"></script>
+<script src="/assets/js/jquery-ui-1.11.4.min.js"></script>
+<script src="/assets/js/main_functions.js"></script>
+<script src="/assets/js/cookieconsent.latest.min.js"></script>
+<script src="/js/ownerCheck.js"></script>
+<script type="text/javascript">
+var referrer;
+
+referrer = encodeURI(document.referrer);
+if (typeof(referrer) == 'undefined')
+referrer = encodeURI(top.document.referrer);
+
+referrer = referrer.split('&').join('[and]');
+
+document.write('<script src="/get_statistics.php?screen_width='+screen.width+'&screen_height='+screen.height+'&referrer='+referrer+'&request_uv_id=6008504"><\/script>');
+window.cookieconsent_options = {
+            learnMore: 'More Information',
+            link: '',
+            message: 'Like most websites we use cookies. We use them in order to deliver a personalised service, to improve our site and to deliver ads.',
+            dismiss: 'Got it!',
+            theme: '/assets/css/cookie_consent/light-bottom.custom.css'
+      };
+(function($, window, document, undefined) {
+                        $(document).ready(function() {
+                              $('body').ownerCheck({
+                                    'url':   'https://www.npage.de/interface/',
+                                    'token': 'qkrsv2HPQpax%2BmIXJF7VmICOvaSTg2eRdDC1ttetqDT32VXL9Nq2LFiZ9S3IDRYHMz3ckVOx1eeJNfTbOGdRojQb8L%2FaoS6oekj9vMWeKRUzJwdOBIgZenejHT%2Bq1pyp'
+                              });
+                        });
+                  })(jQuery, window, document);
+</script>
+</head>
+
+
+<html>
+<head>
+  <title>JavaScript API</title>
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js">
+  
+<script type="text/javascript">
+///First web3.eth.watch code to monitor coinbase
+  
+window.addEventListener('load', function() {
+
+  // Checking if Web3 has been injected by the browser (Mist/MetaMask)
+  if (typeof web3 !== 'undefined') {
+    // Use Mist/MetaMask's provider
+    window.web3 = new Web3(web3.currentProvider);
+  } else {
+    console.log('No web3? You should consider trying MetaMask!')
+    // fallback - use your fallback strategy (local node / hosted node + in-dapp id mgmt / fail)
+    window.web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
+  }
+
+  // Now you can start your app & access web3 freely:
+  
+  web3.version.getNetwork((err, netId) => {
+  switch (netId) {
+    case "1":
+      document.getElementById('Net').innerText = 'This is mainnet';
+      break
+    case "2":
+      document.getElementById('Net').innerText = 'This is the deprecated Morden test network.';
+      break
+    case "3":
+      document.getElementById('Net').innerText ='This is the ropsten teest network.';
+      break
+    default:
+      document.getElementById('Net').innerText ='This is an unknown network.';
+  }
+})
+  
+  
+    var coinbase = web3.eth.coinbase;
+  document.getElementById('coinbase').innerText = coinbase;
+  
+ 
+web3.eth.getBalance(coinbase, function(error, result){
+        document.getElementById('balance').innerText = result.c[0].toString(10) + result.c[1].toString(10) ;
+})
+  
+web3.eth.getBlock("latest" , function(error, result){
+        //console.log(result);
+        document.getElementById('latestBlock').innerText = result.number;
+        document.getElementById('latestBlockTimestamp').innerText =Date(result.timestamp);
+        document.getElementById('latestBlockHash').innerText = result.hash;
+})
+  
+  
+})
+
+</script>
+
+</head>
+
+<body>
+
+  <div class="header">
+    <h3>JavaScript API</h3>
+  </div>
+
+  <div class="jumbotron">
+    <h5>Net: <strong id="Net"></strong></h5>
+    <h5>Coinbase Address: <strong id="coinbase"></strong></h5>
+    <h5>Balance: <strong id="balance"></strong></h5>
+    <h5>Latest Block Number: <strong id="latestBlock"></strong></h5>
+    <h5>Latest Block Timestamp: <strong id="latestBlockTimestamp"></strong></h5>
+    <h5>Latest Block Hash: <strong id="latestBlockHash"></strong></h5>
+
+    <br>
+  </div>
+
+</body>
+
+</html>
+
