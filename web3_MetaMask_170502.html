@@ -50,7 +50,7 @@ window.addEventListener('load', function() {
   
   
   //  var coinbase = web3.eth.coinbase;
-  var coinbase = web3.eth.accounts
+  var coinbase = web3.eth.accounts;
   document.getElementById('coinbase').innerText = coinbase;
   
  
@@ -78,9 +78,9 @@ web3.eth.getBlock("latest" , function(error, result){
     <h3>Hi!</h3>
   </div>
 
-  <div style="background: #aaaaaa; color: #000000; font: Helvetica 12pt">
-    <h5>Net: <strong id="Net"></strong></h5>
-    <h5>Coinbase Address: <strong id="coinbase"></strong></h5>
+  <div style="background: #eeeeee; color: #000000; font: Helvetica 14pt">
+    Net: <strong id="Net"></strong>
+    Coinbase Address: <strong id="coinbase"></strong>
     <h5>Balance: <strong id="balance"></strong></h5>
     <h5>Latest Block Number: <strong id="latestBlock"></strong></h5>
     <h5>Latest Block Timestamp: <strong id="latestBlockTimestamp"></strong></h5>
