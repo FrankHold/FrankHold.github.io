@@ -52,7 +52,7 @@ window.addEventListener('load', function() {
   var coinbase = "";
   web3.eth.getAccounts(function(error, result){
     console.log(result);
-    document.getElementById('coinbase').innerText = result;
+    document.getElementById('coinbase_').innerText = result;
     window.coinbase = result[0];
     console.log(window.coinbase);
   })
@@ -86,7 +86,7 @@ web3.eth.getBlock("latest" , function(error, result){
 
   <div style="background: #eeeeee; color: #000000; font: Helvetica 14pt">
     Net: <strong id="Net"></strong><br>
-    Coinbase Address: <strong id="coinbase"></strong><br>
+    Coinbase Address: <strong id="coinbase_"></strong><br>
     Balance: <strong id="balance"></strong><br>
     Latest Block Number: <strong id="latestBlock"></strong><br>
     Latest Block Timestamp: <strong id="latestBlockTimestamp"></strong><br>
