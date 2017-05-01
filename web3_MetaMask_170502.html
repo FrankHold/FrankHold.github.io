@@ -59,27 +59,29 @@ window.addEventListener('load', function() {
     console.log(coinbase);
   })
 
-  web3.eth.getAccounts(function(err, accounts) { 
-    web3.eth.getBalance(accounts[0], function(err, balance) { 
-      console.log(web3.fromWei(balance, "ether")); 
-    }) 
-  })
+//  web3.eth.getAccounts(function(err, accounts) { 
+//    web3.eth.getBalance(accounts[0], function(err, balance) { 
+//      console.log(web3.fromWei(balance, "ether")); 
+//    }) 
+//  })
     
 web3.eth.getBalance(
-  web3.eth.getAccounts(function(err, accounts) {return accounts[0]}
+  web3.eth.getAccounts(function(err, accounts) {
+        console.log(accounts);
+        return accounts[0];}
                     , function(error, result){
         console.log(result);
         document.getElementById('balance').innerText = result.c[0].toString(10) + result.c[1].toString(10) ;
 }))    
   
 //window.coinbase="0x118c191228cc79cfc886086fc346d1d47e29c2b1";
-  console.log(coinbase);
-  console.log(window.coinbase);
-  console.log(web3.eth.accounts[0]);
-web3.eth.getBalance(coinbase, function(error, result){
-        console.log(result);
-        document.getElementById('balance').innerText = result.c[0].toString(10) + result.c[1].toString(10) ;
-})
+//  console.log(coinbase);
+//  console.log(window.coinbase);
+//  console.log(web3.eth.accounts[0]);
+//web3.eth.getBalance(coinbase, function(error, result){
+//        console.log(result);
+//        document.getElementById('balance').innerText = result.c[0].toString(10) + result.c[1].toString(10) ;
+//})
   
 web3.eth.getBlock("latest" , function(error, result){
         //console.log(result);
