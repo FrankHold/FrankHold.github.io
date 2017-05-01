@@ -18,7 +18,8 @@
   
 window.addEventListener('load', function() {
 
-// Checking if Web3 has been injected by the browser (Mist/MetaMask)
+
+  // Checking if Web3 has been injected by the browser (Mist/MetaMask)
   if (typeof web3 !== 'undefined') {    
     // Use Mist/MetaMask's provider
     window.web3 = new Web3(web3.currentProvider);
@@ -49,7 +50,8 @@ window.addEventListener('load', function() {
   
   //  var coinbase = web3.eth.coinbase;
   //var coinbase = web3.eth.accounts[0];
-  var coinbase = "0x0000000000000000000000000000000000000000";
+  //var coinbase = "0x0000000000000000000000000000000000000000";
+  var coinbase;
   web3.eth.getAccounts(function(error, result){
     console.log(result);
     coinbase = result[0];
