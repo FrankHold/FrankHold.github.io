@@ -48,13 +48,13 @@ window.addEventListener('load', function() {
 }) 
   
   
-    var coinbase = web3.eth.coinbase;
-  document.getElementById('coinbase').innerText = coinbase;
+  //  var coinbase = web3.eth.coinbase;
+  //document.getElementById('coinbase').innerText = coinbase;
   
  
-web3.eth.getBalance(coinbase, function(error, result){
-        document.getElementById('balance').innerText = result.c[0].toString(10) + result.c[1].toString(10) ;
-})
+//web3.eth.getBalance(coinbase, function(error, result){
+//        document.getElementById('balance').innerText = result.c[0].toString(10) + result.c[1].toString(10) ;
+//})
   
 web3.eth.getBlock("latest" , function(error, result){
         //console.log(result);
