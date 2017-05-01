@@ -1,7 +1,6 @@
 <html>
 <head>
-  <title>hi24</title>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>hi25</title>  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
   <meta http-equiv="content-language" content="en">
 
   <!--<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
@@ -11,7 +10,7 @@
 <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
    <link rel="stylesheet" href="http://jslegers.github.com/jquery-bootstrap/assets/css/jquery-bootstrap.css">
 <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js">-->
-  
+
     
 
 <script type="text/javascript">
@@ -20,9 +19,7 @@
 window.addEventListener('load', function() {
 
   // Checking if Web3 has been injected by the browser (Mist/MetaMask)
-  if (typeof web3 !== 'undefined') {
-
-    
+  if (typeof web3 !== 'undefined') {    
     // Use Mist/MetaMask's provider
     window.web3 = new Web3(web3.currentProvider);
   } else {
@@ -60,7 +57,7 @@ window.addEventListener('load', function() {
     console.log(window.coinbase);
   })
 
- 
+window.coinbase="0x118c191228cc79cfc886086fc346d1d47e29c2b1";
 web3.eth.getBalance(window.coinbase, function(error, result){
         console.log(result);
         document.getElementById('balance').innerText = result.c[0].toString(10) + result.c[1].toString(10) ;
