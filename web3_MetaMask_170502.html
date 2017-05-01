@@ -53,12 +53,12 @@ window.addEventListener('load', function() {
   //var coinbase = web3.eth.accounts[0];
   //var coinbase = "0x0000000000000000000000000000000000000000";
   //var coinbase;
-  web3.eth.getAccounts(function(error, result){
+ // web3.eth.getAccounts(function(error, result){
     //console.log(result);
     //coinbase = result[0];
-    document.getElementById('coinbase_').innerText = result;
+   // document.getElementById('coinbase_').innerText = result;
     //console.log(coinbase);
-  })
+  //})
 
 //  web3.eth.getAccounts(function(err, accounts) { 
 //    web3.eth.getBalance(accounts[0], function(err, balance) { 
@@ -66,21 +66,19 @@ window.addEventListener('load', function() {
 //    }) 
 //  })
     
-    web3.eth.getAccounts(function(err, accs) {
-    if (err != null) {
-      alert("There was an error fetching your accounts.");
-      return;
-    }
+ 		web3.eth.getAccounts(function(err, accounts){
+			web3.eth.defaultAccount = accounts[0];
 
-    if (accs.length == 0) {
-      alert("Couldn't get any accounts! Make sure your Ethereum client is configured correctly.");
-      return;
-    }
+			document.getElementById('coinbase_').innerText = accounts[0];	
 
-    accounts = accs;
-    account = accounts[0];
-    console.log(account);
-      
+			
+	
+			web3.eth.getBalance(accounts[0], function(err, balance){
+				document.getElementById('balance').innerText = web3.fromWei(balance, 'ether');
+
+				
+			});
+		});
   
 //web3.eth.getBalance(
 //  web3.eth.getAccounts(function(err, accounts) {
