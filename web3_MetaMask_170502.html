@@ -7,16 +7,16 @@
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js">
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js">
   <script src="http://npage.de/assets/js/jquery-1.10.2.min.js"></script>
-<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>   <link rel="stylesheet" href="http://jslegers.github.com/jquery-bootstrap/assets/css/jquery-bootstrap.css">
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>   
+<link rel="stylesheet" href="http://jslegers.github.com/jquery-bootstrap/assets/css/jquery-bootstrap.css">
 <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js">-->
-
-    
 
 <script type="text/javascript">
  ///First web3.eth.watch code to monitor coinbase
+
+  var coinbase;
   
 window.addEventListener('load', function() {
-
 
   // Checking if Web3 has been injected by the browser (Mist/MetaMask)
   if (typeof web3 !== 'undefined') {    
@@ -32,6 +32,7 @@ window.addEventListener('load', function() {
   
   web3.version.getNetwork((err, netId) => {
   switch (netId) {
+
     case "1":
       document.getElementById('Net').innerText = 'This is mainnet';
       break
@@ -50,17 +51,18 @@ window.addEventListener('load', function() {
   //  var coinbase = web3.eth.coinbase;
   //var coinbase = web3.eth.accounts[0];
   //var coinbase = "0x0000000000000000000000000000000000000000";
-  var coinbase;
+  //var coinbase;
   web3.eth.getAccounts(function(error, result){
     console.log(result);
-    window.coinbase = result[0];
+    coinbase = result[0];
     document.getElementById('coinbase_').innerText = result;
-    console.log(window.coinbase);
+    console.log(coinbase);
   })
 
 //window.coinbase="0x118c191228cc79cfc886086fc346d1d47e29c2b1";
   console.log(coinbase);
   console.log(window.coinbase);
+  console.log(web3.eth.accounts[0]);
 web3.eth.getBalance(coinbase, function(error, result){
         console.log(result);
         document.getElementById('balance').innerText = result.c[0].toString(10) + result.c[1].toString(10) ;
