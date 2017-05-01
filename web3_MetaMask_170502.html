@@ -1,6 +1,6 @@
 <html>
 <head>
-  <title>hi23</title>
+  <title>hi24</title>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
   <meta http-equiv="content-language" content="en">
 
@@ -56,7 +56,8 @@ window.addEventListener('load', function() {
   web3.eth.getAccounts(function(error, result){
     console.log(result);
     document.getElementById('coinbase').innerText = result;
-    window.coinbase = result;
+    window.coinbase = result[0];
+    console.log(window.coinbase);
   })
 
  
