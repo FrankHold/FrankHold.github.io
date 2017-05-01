@@ -3,14 +3,6 @@
   <title>hi25</title>  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
   <meta http-equiv="content-language" content="en">
 
-  <!--<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js">
-  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js">
-  <script src="http://npage.de/assets/js/jquery-1.10.2.min.js"></script>
-<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>   
-<link rel="stylesheet" href="http://jslegers.github.com/jquery-bootstrap/assets/css/jquery-bootstrap.css">
-<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js">-->
-
 <script type="text/javascript">
  ///First web3.eth.watch code to monitor coinbase
   
@@ -25,11 +17,9 @@ window.addEventListener('load', function() {
     // window.web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
   }
 
-  // Now you can start your app & access web3 freely:
-  
+  // Now you can start your app & access web3 freely:  
   web3.version.getNetwork((err, netId) => {
   switch (netId) {
-
     case "1":
       document.getElementById('Net').innerText = 'This is mainnet';
       break
@@ -53,17 +43,14 @@ window.addEventListener('load', function() {
 				document.getElementById('balance').innerText = web3.fromWei(balance, 'ether');
 			});
 	});
-  
-
-  
-web3.eth.getBlock("latest" , function(error, result){
-        //console.log(result);
-        document.getElementById('latestBlock').innerText = result.number;
-        document.getElementById('latestBlockTimestamp').innerText =Date(result.timestamp);
-        document.getElementById('latestBlockHash').innerText = result.hash;
-})
-  
-  
+    
+	web3.eth.getBlock("latest" , function(error, result){
+        	//console.log(result);
+        	document.getElementById('latestBlock').innerText = result.number;
+        	document.getElementById('latestBlockTimestamp').innerText =Date(result.timestamp);
+        	document.getElementById('latestBlockHash').innerText = result.hash;
+	})
+	
 })
 
 </script>
