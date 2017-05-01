@@ -43,7 +43,7 @@ window.addEventListener('load', function() {
     case "3":
       document.getElementById('Net').innerText ='This is the ropsten teest network.';
       break
-    default:
+"    default:
       document.getElementById('Net').innerText ='This is an unknown network.';
   }
 }) 
@@ -77,7 +77,7 @@ web3.eth.getBlock("latest" , function(error, result){
     <h3>Hi!</h3>
   </div>
 
-  <div class="jumbotron">
+  <div bgcolor = "#aaaaaa">
     <h5>Net: <strong id="Net"></strong></h5>
     <h5>Coinbase Address: <strong id="coinbase"></strong></h5>
     <h5>Balance: <strong id="balance"></strong></h5>
