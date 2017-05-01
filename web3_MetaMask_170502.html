@@ -20,7 +20,7 @@
 window.addEventListener('load', function() {
 
   // Checking if Web3 has been injected by the browser (Mist/MetaMask)
-  if (typeof web3 !== 'undefined') {
+style="color: #0900C4; font: Helvetica 12pt;border: 1px solid black;">  if (typeof web3 !== 'undefined') {
     // Use Mist/MetaMask's provider
     window.web3 = new Web3(web3.currentProvider);
   } else {
@@ -76,7 +76,7 @@ web3.eth.getBlock("latest" , function(error, result){
     <h3>Hi!</h3>
   </div>
 
-  <div bgcolor = "#aaaaaa">
+  <div style="bgcolor: #aaaaaa; color: #000000; font: Helvetica 12pt;border: 1px solid black;">
     <h5>Net: <strong id="Net"></strong></h5>
     <h5>Coinbase Address: <strong id="coinbase"></strong></h5>
     <h5>Balance: <strong id="balance"></strong></h5>
