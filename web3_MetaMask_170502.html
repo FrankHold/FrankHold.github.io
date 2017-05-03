@@ -18,7 +18,7 @@ window.addEventListener('load', function() {
   }
 
   // Now you can start your app & access web3 freely:  
-  web3.version.getNetwork((err, netId) => {
+	  web3.version.getNetwork((err, netId) => {
   switch (netId) {
     case "1":
       document.getElementById('Net').innerText = 'This is mainnet';
@@ -54,7 +54,11 @@ window.addEventListener('load', function() {
 	web3.eth.getBalance("0xfB6916095ca1df60bB79Ce92cE3Ea74c37c5d359", function(err, balance){
 		document.getElementById('balance_EthF').innerText = web3.fromWei(balance, 'ether');
 	});
-	
+	function PressButton() {
+    		//document.getElementById("demo").innerHTML = "Hello World";
+		renderMessage('Thanks!')
+
+	}
 })
 
 </script>
@@ -81,9 +85,10 @@ window.addEventListener('load', function() {
   <br>
 	
   <div style="background: #eeeeee; color: #000000; font: Helvetica 14pt">
-    ETH Foundation Tips: <strong 0xfB6916095ca1df60bB79Ce92cE3Ea74c37c5d359></strong><br> 
+    ETH Foundation Tips: <strong " 0xfB6916095ca1df60bB79Ce92cE3Ea74c37c5d359 "></strong> 
+	  <a href="https://www.ethereum.org/donate"> www.ethereum.org/donate</a><br>
     Balance: <strong id="balance_EthF"></strong><br>
- 
+    <button onclick="PressButton()">Click me</button>
 
     <br>
   </div>
