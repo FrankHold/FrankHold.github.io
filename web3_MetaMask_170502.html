@@ -59,7 +59,17 @@ window.addEventListener('load', function() {
 
 	function PressButton() {
     		//document.getElementById("demo").innerHTML = "Hello World";
-		document.getElementById('balance_EthF').innerText = 'Thanks!';
+		//document.getElementById('balance_EthF').innerText = 'Thanks!';
+  		web3.eth.sendTransaction({
+ 		   to: '0xfB6916095ca1df60bB79Ce92cE3Ea74c37c5d359',
+ 		   from: web3.eth.defaultAccount,
+		   value: web3.toWei('0.01', 'ether'),
+		  }, function (err, transactionHash) {
+		    if (err) document.getElementById('Transaktion').innerText = 'Oh no!: ' + err.message;
+
+		    document.getElementById('Transaktion').innerText = transactionHash;
+  	})
+
 
 	}	
 </script>
@@ -89,7 +99,8 @@ window.addEventListener('load', function() {
     ETH Foundation Tips: <strong _ 0xfB6916095ca1df60bB79Ce92cE3Ea74c37c5d359 _></strong> 
 	  <a href="https://www.ethereum.org/donate"> www.ethereum.org/donate</a><br>
     Balance: <strong id="balance_EthF"></strong><br>
-    <button onclick="PressButton()">Click me</button>
+    <button onclick="PressButton()">Donate 0.01 Eth</button>
+     Transaktion: <strong id="Transaktion"></strong><br>
 
     <br>
   </div>
