@@ -54,13 +54,14 @@ window.addEventListener('load', function() {
 	web3.eth.getBalance("0xfB6916095ca1df60bB79Ce92cE3Ea74c37c5d359", function(err, balance){
 		document.getElementById('balance_EthF').innerText = web3.fromWei(balance, 'ether');
 	});
-	function PressButton() {
-    		//document.getElementById("demo").innerHTML = "Hello World";
-		renderMessage('Thanks!')
-
-	}
 })
 
+
+	function PressButton() {
+    		//document.getElementById("demo").innerHTML = "Hello World";
+		renderMessage('Thanks!');
+
+	}	
 </script>
 
 </head>
