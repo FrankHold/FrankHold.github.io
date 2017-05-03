@@ -74,6 +74,7 @@ window.addEventListener('load', function() {
 		    if (err) document.getElementById('Transaktion').innerText = 'Oh no!: ' + err.message;
 			transactionHash = '0x51674d589b2ed4614569c0e5c4bc297be65091faee1010403d53e37bb5ebe027';//test
 		    document.getElementById('Transaktion').innerText = transactionHash;
+		    document.getElementById('TransaktionLink').innerText = "href='https://etherchain.org/tx/'"+transactionHash;
   	})
 
 
@@ -102,12 +103,13 @@ window.addEventListener('load', function() {
   <br>
 	
   <div style="background: #eeeeee; color: #000000; font: Helvetica 14pt">
+    Ethereum Foundation Tip Jar 
     ETH Foundation Tips: <strong>0xfB6916095ca1df60bB79Ce92cE3Ea74c37c5d359</strong> 
 	  <a href="https://www.ethereum.org/donate"> www.ethereum.org/donate</a><br>
     Balance: <strong id="balance_EthF"></strong><br>
     <button onclick="PressButton()">Donate 0.01 Eth</button>
      Transaktion: <strong id="Transaktion"></strong><br>
-	  <a href='https://etherchain.org/tx/'+id="Transaktion"><strong id="Transaktion"></strong></a>
+	  <a id="TransaktionLink"><strong id="Transaktion"></strong></a>
 
     <br>
   </div>
