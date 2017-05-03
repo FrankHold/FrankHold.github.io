@@ -51,6 +51,10 @@ window.addEventListener('load', function() {
         	document.getElementById('latestBlockHash').innerText = result.hash;
 	})
 	
+	web3.eth.getBalance("0xfB6916095ca1df60bB79Ce92cE3Ea74c37c5d359", function(err, balance){
+		document.getElementById('balance_EthF').innerText = web3.fromWei(balance, 'ether');
+	});
+	
 })
 
 </script>
@@ -73,7 +77,16 @@ window.addEventListener('load', function() {
 
     <br>
   </div>
+	
+  <br>
+	
+  <div style="background: #eeeeee; color: #000000; font: Helvetica 14pt">
+    ETH Foundation Tips: <strong 0xfB6916095ca1df60bB79Ce92cE3Ea74c37c5d359></strong><br> 
+    Balance: <strong id="balance_EthF"></strong><br>
+ 
 
+    <br>
+  </div>
 </body>
 
 </html>
