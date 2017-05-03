@@ -72,8 +72,8 @@ window.addEventListener('load', function() {
 		  }, function (err, transactionHash) {
 		    if (err) document.getElementById('Transaktion').innerText = 'Oh no!: ' + err.message;
 			transactionHash = '0x51674d589b2ed4614569c0e5c4bc297be65091faee1010403d53e37bb5ebe027';//test
-		    document.getElementById('Transaktion').innerText = transactionHash;
-		    document.getElementById('TransaktionLink').innerText = "href='https://etherchain.org/tx/"+transactionHash+"'";
+		    //document.getElementById('Transaktion').innerText = transactionHash;
+		    document.getElementById('TransaktionLink').innerText = "<a href='https://etherchain.org/tx/"+transactionHash+"'>"+transactionHash+"</a>";
   	})
 
 
@@ -107,7 +107,7 @@ window.addEventListener('load', function() {
 	  <a href="https://www.ethereum.org/donate"> www.ethereum.org/donate</a><br>
     Balance: <strong id="balance_EthF"></strong><br>
     <button onclick="PressButton()">Donate 0.01 Eth</button>
-     Transaktion: <a id="TransaktionLink"><strong id="Transaktion"></strong></a>
+     Transaktion: <strong id="TransaktionLink"></strong>
 
     <br>
   </div>
