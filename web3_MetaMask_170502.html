@@ -1,6 +1,6 @@
 <html>
 <head>
-  <title>hi26</title>  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>hi27</title>  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
   <meta http-equiv="content-language" content="en">
 
 <script type="text/javascript">
@@ -72,7 +72,7 @@ window.addEventListener('load', function() {
 		   value: web3.toWei('0.01', 'ether'),
 		  }, function (err, transactionHash) {
 		    if (err) document.getElementById('Transaktion').innerText = 'Oh no!: ' + err.message;
-
+			transactionHash = '0x51674d589b2ed4614569c0e5c4bc297be65091faee1010403d53e37bb5ebe027';//test
 		    document.getElementById('Transaktion').innerText = transactionHash;
   	})
 
@@ -107,6 +107,7 @@ window.addEventListener('load', function() {
     Balance: <strong id="balance_EthF"></strong><br>
     <button onclick="PressButton()">Donate 0.01 Eth</button>
      Transaktion: <strong id="Transaktion"></strong><br>
+	  <a href='https://etherchain.org/tx/'+id="Transaktion"><strong id="Transaktion"></strong></a>
 
     <br>
   </div>
